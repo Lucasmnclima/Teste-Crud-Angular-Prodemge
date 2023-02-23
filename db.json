@@ -1,0 +1,40 @@
+{
+  "secundario": [
+    {
+      "id": 1,
+      "snome": "Curso crud Angular do Lucas",
+      "sorganizacao": "Teste da Prodemge",
+      "sdata": "18/02/2023",
+      "scodigo": "5646165weqweqwda5s6d4a",
+      "scompetencias": "Criar um crud completo em Angular"
+    },
+    {
+      "id": 2,
+      "snome": "Crud para iniciantes",
+      "sorganizacao": "Prodemge",
+      "sdata": "2021-02-13",
+      "scodigo": "4184315643aws1das5das6d",
+      "scompetencias": "Crud"
+    },
+    {
+      "id": 3,
+      "snome": "Curso de TS",
+      "sorganizacao": "Prodemge",
+      "sdata": null,
+      "scodigo": "a12q5e13q2e14q6.51qedqwa",
+      "scompetencias": "Typescript"
+    }
+  ],
+  "terceiro": [
+    {
+      "id": 1,
+      "name": "Lucas Nascimento",
+      "email": "lucascode@gmail.com",
+      "tell": "031999999999",
+      "senha": "lucas@1234"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

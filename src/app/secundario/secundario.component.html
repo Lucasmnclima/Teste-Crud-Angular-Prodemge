@@ -1,0 +1,191 @@
+<!-- <p>Terceira etapa do projeto!</p> -->
+
+<!--Segunda navbar do bootstrap-->
+<nav class="navbar navbar-light bg-danger">
+    <div class="container-fluid" style="justify-content: center;">
+        <h2 style="color: whitesmoke;">Cursos e competências</h2>
+    </div>
+</nav>
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Adicionar Cursos feitos</h1>
+        <p class="col-mb-8 fs-4">Você pode adicionar competências e cursos aqui.</p>
+        <a target="_blank" href="https://github.com/lucasmnclima" style="color: #d20a11; font-weight: bold">Dev Lucas
+            Nascimento</a>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-outline-danger" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" (click)="clickAddProp()">Adicionar</button>
+                <button class="btn btn-outline-secondary mx-3" routerLink="/inicial">Retornar</button>
+              </div>
+    </div>
+</div>
+
+<!--Primeira table do bootstrap-->
+<table class="table" style="border: #d20a11;">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome do curso</th>
+            <th scope="col">Organização emissora</th>
+            <th scope="col">Data de início</th>
+            <th scope="col">Código da credencial</th>
+            <th scope="col">Competências aprendidas</th>
+            <th scope="col">action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of allProperty">
+            <td>{{data.id}}</td>
+            <td>{{data.snome}}</td>
+            <td>{{data.sorganizacao}}</td>
+            <td>{{data.sdata}}</td> <!--Utilizar um pipe da próxima vez-->
+            <td>{{data.scodigo}}</td>
+            <td>{{data.scompetencias}}</td>
+            <td>
+                <button class="btn btn-outline-dark" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Editar</button>
+                <button class="btn btn-outline-danger mx-2" (click)="deletProp(data)">Deletar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Footer -->
+<footer class="container-fluid" style="background-color: #dc3546; padding-top: 15px;">
+    <section class="container">
+      <section class="row">
+        <article class="col-md-4">
+          <h4>
+            Atendimento
+          </h4>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="tel:+5531999999999">(31) 9 9999 9999</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="https://www.prodemge.gov.br/index.php">Site da Prodemge</a>
+            </li>
+
+            <li class="nav-item" style="color: white;">
+              Atendimento virtual: <br> De segunda à sexta, de 07:00 às 19:00h
+            </li>
+          </ul>
+        </article>
+
+        <article class="col-md-3">
+          <h4>
+            Acesso rápido
+          </h4>
+          <!-- links -->
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="https://expressomg.mg.gov.br/">ExpressoMG</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="https://www.prodemge.gov.br/produtos-e-servicos/business-intelligence">Business Intelligence</a>
+            </li>
+
+
+          </ul>
+        </article>
+
+        <article class="col-md-3">
+          <h4>
+            Institucional
+          </h4>
+          <!-- links -->
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="https://www.prodemge.gov.br/transparencia">Transparência</a>
+            </li>
+        
+            <li class="nav-item">
+                <a href="https://www.prodemge.gov.br/institucional">Institucional</a>
+              </li>
+            <li class="nav-item">
+              <a href="https://www.prodemge.gov.br/prestacao-de-contas">Prestação de contas</a>
+            </li>
+          </ul>
+        </article>
+        <!-- end institucional -->
+
+        <!-- Leis -->
+        <article class="col-md-2">
+          <h4>
+            Leis e Garantias
+          </h4>
+          <!-- links -->
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">LGPD L13709/2018</a>
+            </li>
+
+            <li class="nav-item ellipsis">
+              <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm">LOA L12527/2011</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/D10222.htm">crimes cibernéticos D10222/2020</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="http://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l12965.htm">Marco Civil da internet L12965/2014</a>
+            </li>
+          </ul>
+        </article>
+        <!-- Leis e garantias -->
+      </section>
+      <!-- end menus -->
+    </section>
+    <!-- end container -->
+
+  </footer>
+  <!-- Fim do Footer-->
+
+
+<!-- Button trigger modal -->
+<!--Segundo modal do bootstrap. "Live demo"-->
+<!-- Modal baseado no modal do linkedin-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar/Editar licença ou certificado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formValue"> <!--Adicionando formValue ao HTML-->
+                    <!--Forms HTML do bootstrap-->
+                    <!--Utilizando as declarações no db.json no formControlName-->
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Nome do curso</label>
+                        <input formControlName="snome" type="text" class="form-control" placeholder="nome do curso">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">organização emissora</label>
+                        <input formControlName="sorganizacao" type="text" class="form-control" placeholder="organização emissora">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Data de início</label>
+                        <input formControlName="sdata" type="date" class="form-control" placeholder="data">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Código da credencial</label>
+                        <input formControlName="scodigo" type="text" class="form-control" placeholder="61asw513-wergg-7288-e54r-54asd1asd5ad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Competências aprendidas</label>
+                        <input formControlName="scompetencias" type="text" class="form-control" placeholder="competencias aprendidas">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="limpar" class="btn btn-secondary" data-bs-dismiss="modal">Limpar formulário</button>
+                <button type="button" *ngIf="botadicionar" class="btn btn-danger" (click)="addProp()">Salvar curso</button>
+                <button type="button" *nfIf="boteditar" class="btn btn-dark">Editar detalhes</button>
+            </div>
+        </div>
+    </div>
+</div>
